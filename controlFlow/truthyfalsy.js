@@ -25,3 +25,25 @@ if (Object.keys(emptyObj).length === 0)/* this returns an aray*/{
 }
 
 //NUllish coalesing Operaor (??): null defined
+
+let val1;
+//val1 = 5 ?? 10
+val1 = null ?? 10; // 10 will print
+console.log(val1);
+
+val2 = undefined ?? 15;
+console.log(val2);
+
+val3 = null ?? 10 ?? 20
+console.log(val3);
+
+// Ternary operaror
+
+//conditon ? true : false
+const iceTeaPrice = 100;
+iceTeaPrice >=80 ? console.log("more then 80"):console.log("less then 80")
+
+
+
+
+
