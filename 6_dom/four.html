@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class ="language">
+        <li>Javascript</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>Python</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        const ul = document.querySelector('.language'); // Get the 'ul' element using querySelector
+        ul.appendChild(li); // Append the new 'li' element to the 'ul
+    }
+    addLanguage("python")
+    addLanguage("java")
+    addLanguage("typescript")
+    // this function will not be optimesed because it wil traverse the whole tree agan and agian to add the list item
+
+    // so optimised function to add list
+
+    function addOptiLang(lanName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lanName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addOptiLang('golang')
+
+    // Edit thse values
+
+    const edit1 = document.querySelector("li:nth-child(2)")
+    edit1.innerHTML="Mojo" // but not optimised
+
+    // optimised
+    const newLi= document.createElement('li')
+    newLi.textContent = "Mojo"
+    edit1.replaceWith(newLi)
+
+    // one more edit
+    const edit2 = document.querySelector("li:first-child")
+    edit2.outerHTML='<li>IndiLanguage</li>'
+
+    // remove 
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove() // golang is removed
+
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Chai  aur code</title>
+</head>
+<body  style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+
+    </div>
+</body>
+<script>
+    const parentt = document.querySelector('.parent')
+    console.log(parentt);
+    //console.log(parentt.children[3].innerHTML); //see all these things in console
+    // for(let i=0; i<parentt.children.length; i++){
+    //     console.log(parentt.children[i].innerHTML);
+    // }
+    parentt.children[1].style.color = "orange"
+    // console.log(parentt.firstElementChild);
+    // console.log(parentt.lastElementChild); // yeh hum parent se child par move kar rahe hai 
+    
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    // but hum child se parent par bhi move kar skte hai
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+
+    console.log("NODES:", parentt.childNodes);  // this is a complex tree structure
+    // go and explore this on console window there are more than the nodes available that we assume
+
+
+
+</script>
+</html>
