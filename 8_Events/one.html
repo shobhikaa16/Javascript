@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: rgb(90, 133, 164); color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li> <img width="200px"  id="photoshop" src="shiv.jpg"> </li>
+            <li> <img width="200px"  id="japan" src="shiv.jpg"> </li>
+            <li> <img width="200px"  id="river" src="shiv.jpg"> </li>
+            <li> <img width="200px"  id="owl" src="shiv.jpg"> </li>
+            <li> <img width="200px"  id="prayer" src="shiv.jpg"> </li>
+            <li> <a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('Owl made by him')  
+    //}  here we can access less features
+    // this last false written is event propagation this can also be true
+    //Events we have to study - type, timestamp, defaultPrevented, 
+    // target ,toElement, srcElement, currentTarget
+    // clinetX, clientY, screenX, screenY
+    //altkey, ctrlkry, shiftkry , keycode
+    //attachEvent()
+    //jQuery - on
+
+    // What is event propagation- eventbubbling(false) , eventcapturing(true)
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked indside the ul ")
+    },false)
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log(e)
+        alert("Made by him - owl")
+        e.stopPropagation() // ab bubble hokar ooper ke event par nhi jaega
+    },false) 
+// false = bubbleevent its like bubble niche se ooper ki taraf
+// true = bubblecapture its like bahar se andar ki taraf
+
+</script>
+</html>
