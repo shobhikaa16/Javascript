@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Html Events</title>
+    <link rel="stylesheet" href="one.css">
+
 </head>
 <body style="background-color: rgb(90, 133, 164); color: aliceblue;">
     <h2>Amazing Images</h2>
-    <div>
+    <div class="imgBox">
         <ul id="images">
             <li> <img width="200px"  id="photoshop" src="shiv.jpg"> </li>
             <li> <img width="200px"  id="japan" src="shiv.jpg"> </li>
@@ -32,16 +34,37 @@
     //jQuery - on
 
     // What is event propagation- eventbubbling(false) , eventcapturing(true)
-    document.getElementById('images').addEventListener('click', function(e){
-        console.log("clicked indside the ul ")
+//     document.getElementById('images').addEventListener('click', function(e){
+//         console.log("clicked indside the ul ")
+//     },false) // false nhi bhi likha hoga toh bydefault false
+//     document.getElementById('owl').addEventListener('click',function(e){
+//         console.log(e)
+//         alert("Made by him - owl")
+//         e.stopPropagation() // ab bubble hokar ooper ke event par nhi jaega
+//     },false) 
+// // false = bubbleevent its like bubble niche se ooper ki taraf
+// // true = bubblecapture its like bahar se andar ki taraf
+
+//     document.getElementById('google').addEventListener('click',function(e){
+//         e.preventDefault()
+// // yeh prevent defaullt krnese hum google par click krenge toh uski id par nhi jaenge baklijo hum chahate hai vo print kraenge
+//         console.log("google clicked");
+//     },false)
+
+    //we are going to do that if we click image then it got disappear
+    document.querySelector('#images').addEventListener('click',function(e){
+             console.log(e.target.parentNode);  // .parent node kiya hai kyuki img gayab krne ke liye hume uske oarent ko target krna tha
+             let removeIt = e.target.parentNode  // if we bymistake ckick on any li then it will disappear whole ul 
+             //kyuki li parent pura ul haina - to solve this 
+
+             removeIt.remove()
+
+            
+             // or we can use - given in img 
+             // removeIt.parentNode.removeChild(removeIt)
     },false)
-    document.getElementById('owl').addEventListener('click',function(e){
-        console.log(e)
-        alert("Made by him - owl")
-        e.stopPropagation() // ab bubble hokar ooper ke event par nhi jaega
-    },false) 
-// false = bubbleevent its like bubble niche se ooper ki taraf
-// true = bubblecapture its like bahar se andar ki taraf
+
+
 
 </script>
 </html>

@@ -1,0 +1,4 @@
+.imgBox{
+    display: flex;
+    flex-direction: row;
+}
