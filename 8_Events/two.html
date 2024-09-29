@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchroous</title>
+</head>
+<body>
+    <h1>Shobhika - Leading her life</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayShobhika =function (){
+        console.log("Shohika");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML="Can acieve anything, she wants"
+    }
+    const changeMe = setTimeout(changeText, 2000) // we use this to change the h1 heading after 2000mili secs
+    // but now if we dont want to change that after we click the sop button then we use cleatTimeout 
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)  
+        console.log("Stopped")
+    })
+
+    //setTimeout(sayShobhika, 2000)
+
+
+    
+</script>
+</html>
