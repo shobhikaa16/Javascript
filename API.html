@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(73, 73, 73); color: aliceblue;">
+    
+</body>
+<script>
+    const xhr = new XMLHttpRequest();
+    const reqUrl = 'https://api.github.com/users/shobhikaa16'
+    xhr.open('GET',reqUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data =JSON.parse(this.responseText); // pehele yeh string type tha but JSON.parse krke yeh object bn gya hai
+            // jiski wajah se jab hum followerska data lenge toh vo undefined nhi dikhaega
+            console.log(data);
+            console.log(typeof data); // most of the time data from url comes in the form of  string
+
+            console.log(data.followers)
+        } // from here take the pic and num of followers and make a card of it project type
+    }   // read about v8 iske andar hi sab kuch hai jese consoel.log bhi and other bhi
+    xhr.send();
+</script>
+</html>
