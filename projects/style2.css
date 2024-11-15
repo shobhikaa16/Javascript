@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+.main{
+    color: aliceblue;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+}
+
+#home, btn{
+    border-radius: 8px;
+}
+#clock{
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+    background-color: orange;
+    font-size: 1.5rem;
+    color: white;
+    padding: 0.5rem;
+}
