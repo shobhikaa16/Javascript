@@ -86,3 +86,32 @@ let fruits = ["mangoes","apple","banana"];
 for(let i=0; i<fruits.length; i++){
     console.log(i,fruits[i]);
 }
+
+
+// for of loop - we use it if we want to access the items of the array
+// syntax for(element of collection){ do something here}
+
+let basket = ["m","p","b","o"];
+for( fruits of basket){
+    console.log(fruits);
+}
+
+for(char of "Shobhika"){
+    console.log(char);
+}
+
+// we can also use nested for off loop
+
+let list =[[1,2,2,3],[6,6,6,6]];
+
+// we can do this 
+for(nums of list){
+    console.log(nums);
+}
+
+// ans we can also try this
+for(nums of list){
+    for(n of nums){
+        console.log(n);
+    }  
+}
