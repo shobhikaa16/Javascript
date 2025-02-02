@@ -1,7 +1,7 @@
-console.log(1);
-console.log(2);
-console.log(3);
-console.log(4);
+// console.log(1);
+// console.log(2);
+// console.log(3);
+// console.log(4);
 
 // loops in javascript to iteratie the piese of code
 // syntax for( initialisation; conditon; updation){ do somwthing here}
@@ -43,15 +43,15 @@ for(let i=1; i<=10; i++){
 */
 
 //Nested loops
-for(let i=1; i<=3; i++){
-    console.log(`outer loop ${i}`);
-    for(let j=1; j<=3; j++){
-        console.log(j);
-    }
-}
+// for(let i=1; i<=3; i++){
+//     console.log(`outer loop ${i}`);
+//     for(let j=1; j<=3; j++){
+//         console.log(j);
+//     }
+// }
 
 //while loops
-let i=1;
+/*let i=1;
 while(i <= 5){
     console.log(i);
     i++;
@@ -62,13 +62,27 @@ while( j >= 1){
     console.log(j);
     j--;
 }
+    */
 
 
 //favourite Movie
 
-let favMovie = "Harry Potter"
+// const favMovie = "Harry Potter"
 
-let guess = prompt(" Guess the movie - Most famous movie among children");
-while(guess != favMovie){
-    
+// let guess = prompt("Guess the movie - Most famous movie among children");
+// while((guess != favMovie) && (guess != "quit")){
+//     guess = prompt("Wrong Guess. Guess the movie again");
+// }
+// if( guess == favMovie){
+//     console.log("Congrats you guess the right");
+// }else{
+//     console.log("You quit");
+// }
+
+//break keyword break the loop and comes out the loop at the same time
+
+//lopps with arrays
+let fruits = ["mangoes","apple","banana"];
+for(let i=0; i<fruits.length; i++){
+    console.log(i,fruits[i]);
 }
