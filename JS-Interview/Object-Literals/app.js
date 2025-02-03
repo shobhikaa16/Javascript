@@ -1,6 +1,6 @@
 // Object and Object literals are different in the js.
 // they are used to store keyed collections and complex entities
-//property =>(key,value) pair , object are a collection of properties
+// property =>(key,value) pair , object are a collection of properties
 
 let delhi ={
     latitide: "23:35:N",
@@ -129,5 +129,30 @@ Math.random(); // random values btw 0-1 where 1 is exclusive
 // Math.floor(num);
 //num = num+1;  ,, the nums generated are always inrange 0-9 to make them in range 0-10 we add 1 at last step
 let ran = Math.floor(Math.random()*10)+1;
+
+//Guessing Num Game
+let max = prompt("Enter the max num");
+const random = Math.floor(Math.random()*max)+1;
+console.log(random);
+let guess =  prompt("guess the num");
+while(true){
+    if(guess == "quit"){
+        console.log("user quit");
+        break;
+    }
+    if(guess == random){
+        console.log("you win!!");
+        break;
+    }else if(guess > random){
+        guess = prompt("you are near take a smaller num ");
+    }else{
+        guess = prompt("you are near take bigger num");
+    }
+        // idhar pehele hum prompt dete wrong ka phir guess likhte jisse vo dobara guess kare so humne directly guess ke andar prompt daldia
+        // jisse guess ki saari conditions chale
+    
+
+}
+
 
 
