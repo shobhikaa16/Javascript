@@ -145,7 +145,7 @@ while(true){
         break;
     }else if(guess > random){
         guess = prompt("you are near take a smaller num ");
-    }else{
+    }else if(guess < random){
         guess = prompt("you are near take bigger num");
     }
         // idhar pehele hum prompt dete wrong ka phir guess likhte jisse vo dobara guess kare so humne directly guess ke andar prompt daldia
