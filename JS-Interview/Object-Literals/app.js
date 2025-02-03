@@ -69,3 +69,65 @@ students.marks = "A";
 delete students.gender;
 
 //Nesting of Objects or Objects of Objects
+
+const classInfo ={
+    Shobhika :{
+        grade: "A+",
+        city: "a"
+    },
+    Shraddha: {
+        grade:"B+",
+        city: "b"
+    },
+    Shobhit:{
+        grade:"B+",
+        city:"c"
+    }
+};
+
+//accessing the data
+classInfo.Shobhika;
+classInfo.Shobhika.city;
+
+//updating the data
+classInfo.Shobhika.city = "r";
+
+
+//Arrays of Objects - see the difference carefully in both 
+const classInfor =[
+    {
+        name:"sho",
+        grade:"A",
+        city:"p"
+    },
+    {
+        name:"sh",
+        grade:"A",
+        city:"q"
+    },
+    {
+        name:"s",
+        grade:"C",
+        city:"r"
+    }
+];
+// here in arrayObjects we can have the index values and index are from 0
+classInfor[1].name;  
+
+//Maths OBjects in js
+//Properties - Math.PI , Math.E ,there are many maths operations
+//Methods - 
+Math.abs(-12.5)
+Math.pow(2,3)
+Math.floor(45.445); // round off and give less than or equal value
+Math.ceil(45.1);
+Math.random(); // random values btw 0-1 where 1 is exclusive
+
+// Generate Random integeres
+// let num = Math.random();
+// num*=10;
+// Math.floor(num);
+//num = num+1;  ,, the nums generated are always inrange 0-9 to make them in range 0-10 we add 1 at last step
+let ran = Math.floor(Math.random()*10)+1;
+
+
