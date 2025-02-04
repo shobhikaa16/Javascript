@@ -117,6 +117,16 @@ const studentts = {  //this object has global scope
     }
 };
 
+// fun that prints hello worls 5 times at intervals of 2 sec each
+let ide = setInterval( ()=>{
+     console.log("Hello World!");
+},(2000));
+
+setTimeout( ()=>{
+    clearInterval(ide);
+    console.log("clear interval ran")
+},10000)
+
 
 
 
