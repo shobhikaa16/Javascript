@@ -25,5 +25,8 @@ function changeColor(){
     this.style.backgroundColor = "pink";
 }
 
-// keyboard events
- 
+// Mouse events
+// btn.addEventListener("dblclick", function(event){
+//     console.log(event);
+//     console.log("button clicked");
+// });  all for our 
