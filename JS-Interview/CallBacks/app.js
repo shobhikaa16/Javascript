@@ -53,24 +53,49 @@
 
 
 // due to asynchronous nature there comes call back hell problem
- let h2 = document.querySelector("h2");
+//  let h2 = document.querySelector("h2");
   
-function changeColor(color,delay,nextColorChange){
-    setTimeout(()=> {
-        h2.style.color = color;
-        if(nextColorChange)nextColorChange();
-    },delay)
+// function changeColor(color,delay,nextColorChange){
+//     setTimeout(()=> {
+//         h2.style.color = color;
+//         if(nextColorChange)nextColorChange();
+//     },delay)
    
-}
+// }
 
 // this is the nesting of the calls is called call back hell
-changeColor("pink",1000,()=>{
-    changeColor("orange",2000, ()=>{
-        changeColor("purple",3000)
-    })
-})
+// changeColor("pink",1000,()=>{
+//     changeColor("orange",2000, ()=>{
+//         changeColor("purple",3000)
+//     })
+// })
 
 // to avoid call back hell we use async , await , promises
+function saveToDb(data,success, failure){
+
+    let internetSpeed = Math.floor(Math.random() *10)+1;
+    if(internetSpeed > 4){
+       success();
+    }else{
+        failure();
+    }
+}
+// function by using the callback - normally see it as the nested if else
+saveToDb("shobhika", ()=>{
+    console.log("success:ypur data was saved:");
+    saveToDb("hello you are best",()=>{
+        console.log("success 2:ypur data was saved:");
+        saveToDb("And you did it", ()=>{
+            console.log("yes");
+        }, ()=>{
+            console.log("offc yes");
+        })
+    }, ()=>{
+        console.log("failure 2:your data was not saved:");
+    })
+}, ()=>{
+    console.log("failure:your data was not saved:");
+});
 
 
 
