@@ -5,13 +5,13 @@
 
 // like in last internetspeed function instead of success and failure we will return the promise object 
 
-function saveToDb(data){
+function saveToDb(data) {
 
-    let internetSpeed = Math.floor(Math.random() *10)+1;
-    return new Promise((resolve,reject)=>{
-        if(internetSpeed > 4){
+    let internetSpeed = Math.floor(Math.random() * 10) + 1;
+    return new Promise((resolve, reject) => {
+        if (internetSpeed > 4) {
             return resolve("success:data was saved");
-        }else{
+        } else {
             return reject("failed:speed was weak");
         }
     });
@@ -27,41 +27,93 @@ saveToDb("Shobhika is here")
 
 let request = saveToDb("SHobhika is here");
 console.log(request);
-request.then(() =>{
+request.then(() => {
     console.log("promise was resolved");
 })
-.catch(()=>{
-    console.log("promise was rejected")  // toh ab agar reject hoga toh error print nhi hoga
-})
+    .catch(() => {
+        console.log("promise was rejected")  // toh ab agar reject hoga toh error print nhi hoga
+    })
 // we can change syntax by removing the variablae request and directly call on our function
 
 //Promise chaining when we use multiple then()
 // multiple then and single catch()
 saveToDb("SHobhika is here")
-.then(() =>{
-    console.log("promise was resolved");
-    saveToDb("helloworld")
-    .then(()=>{
-        console.log("data 2 saved");
+    .then(() => {
+        console.log("promise was resolved");
+        saveToDb("helloworld")
+            .then(() => {
+                console.log("data 2 saved");
+            })
     })
-})
-.catch(()=>{
-    console.log("promise was rejected")  // toh ab agar reject hoga toh error print nhi hoga
-})
+    .catch(() => {
+        console.log("promise was rejected")  // toh ab agar reject hoga toh error print nhi hoga
+    })
 
 // making the above code more better - yeh wala eroor nhi show kreaga agat work reeject hua toh
 saveToDb("Shobhika is here")
-.then(() =>{
-    console.log("promise was resolved");
-    return saveToDb("helloWOrld");
-})
-.then(()=>{
-    console.log("data2 saved")
-    return saveToDb("making more nesting");
-})
-.then(()=>{
-    console.log("data 3 saved");
-})
-.catch(()=>{
-    console.log("promise was rejected");  // toh ab agar reject hoga toh error print nhi hoga
+    .then((results) => {
+        console.log("promise was resolved");
+        console.log(results);
+        return saveToDb("helloWOrld");
+    })
+    .then((result) => {
+        console.log("data2 saved")
+        console.log(result);
+
+        return saveToDb("making more nesting");
+    })
+    .then((result) => {
+        console.log(results);
+        console.log("data 3 saved");
+    })
+    .catch(() => {
+        console.log("promise was rejected");  // toh ab agar reject hoga toh error print nhi hoga
+    });
+
+// promises are rejected or resolved with some data(valid results or errors)
+//.then(result) this can store 
+// jab chahate hai phele call successfull ho tabhi dusri call ho and so on isiliye we use promises
+
+// applyting the promiseson the colour code 
+
+let h2 = document.querySelector("h2");
+  
+function changeColor(color,delay){
+    new Promise((resolve,reject)=>{
+        setTimeout(()=> {
+        h2.style.color = color;
+        resolve("color changed");
+       
+    },delay);
 });
+}
+
+changeColor("red",1000)
+.then(()=>{
+    console.log("red color was repeated");
+    return changeColor("orange",1000)
+})
+.then(()=>{
+    console.log("next color done")
+    return changeColor("blue",1000)
+})
+.then(()=>{
+    console.log("blue was complete");
+    return changeColor("pink",1000)
+})
+.then(()=>{
+    console.log("pink was done!");
+})
+   
+
+// changeColor("pink", 1000, () => {
+//     changeColor("orange", 1000, () => {
+//         changeColor("purple", 1000, () => {
+//             changeColor("red", 1000, () => {
+//                 changeColor("violet", 1000);
+//             });
+//         });
+//     });
+// });
+
+// promise has third state also called pending - pta nhi hai abhi ki kaam hua ya nhi

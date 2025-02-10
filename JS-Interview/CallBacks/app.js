@@ -66,7 +66,7 @@
 // this is the nesting of the calls is called call back hell
 // changeColor("pink",1000,()=>{
 //     changeColor("orange",2000, ()=>{
-//         changeColor("purple",3000)
+//         changeColor("purple",3000,)
 //     })
 // })
 
