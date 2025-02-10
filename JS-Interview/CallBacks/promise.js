@@ -4,3 +4,43 @@
 //Promise  object has two things (resolve and reject)
 
 // like in last internetspeed function instead of success and failure we will return the promise object 
+
+function saveToDb(data){
+
+    let internetSpeed = Math.floor(Math.random() *10)+1;
+    return new Promise((resolve,reject)=>{
+        if(internetSpeed > 4){
+            return resolve("success:data was saved");
+        }else{
+            return reject("failed:speed was weak");
+        }
+    });
+}
+
+// in the console
+
+saveToDb("Shobhika is here")
+
+// as promise is an object so it has its methods then() and catch()
+// if the promise has state that it has fulfilled then after that we want that any work could execute then we use then()
+// and when it reject then the error is thrown anwe use catch() to catch the error
+
+let request = saveToDb("SHobhika is here");
+console.log(request);
+request.then(() =>{
+    console.log("promise was resolved");
+})
+.catch(()=>{
+    console.log("promise was rejected")  // toh ab agar reject hoga toh error print nhi hoga
+})
+// we can change syntax by removing the variablae request and directly call on our function
+
+//Promise chaining when we use multiple then()
+
+saveToDb("SHobhika is here")
+.then(() =>{
+    console.log("promise was resolved");
+})
+.catch(()=>{
+    console.log("promise was rejected")  // toh ab agar reject hoga toh error print nhi hoga
+})
