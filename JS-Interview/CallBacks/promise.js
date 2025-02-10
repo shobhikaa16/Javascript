@@ -36,11 +36,32 @@ request.then(() =>{
 // we can change syntax by removing the variablae request and directly call on our function
 
 //Promise chaining when we use multiple then()
-
+// multiple then and single catch()
 saveToDb("SHobhika is here")
 .then(() =>{
     console.log("promise was resolved");
+    saveToDb("helloworld")
+    .then(()=>{
+        console.log("data 2 saved");
+    })
 })
 .catch(()=>{
     console.log("promise was rejected")  // toh ab agar reject hoga toh error print nhi hoga
 })
+
+// making the above code more better - yeh wala eroor nhi show kreaga agat work reeject hua toh
+saveToDb("Shobhika is here")
+.then(() =>{
+    console.log("promise was resolved");
+    return saveToDb("helloWOrld");
+})
+.then(()=>{
+    console.log("data2 saved")
+    return saveToDb("making more nesting");
+})
+.then(()=>{
+    console.log("data 3 saved");
+})
+.catch(()=>{
+    console.log("promise was rejected");  // toh ab agar reject hoga toh error print nhi hoga
+});
