@@ -47,6 +47,10 @@ async function demo(){
 let h3 = document.querySelector("h3");
 function changeColor(color,delay){
     return new Promise((resolve,reject)=>{
+        let num = Math.floor(Math.random()*10)+1;
+        if(num > 3){
+            reject("promise rejected");
+        }
         setTimeout(() => {
             h3.style.color=color;
             console.log("color chnges");
@@ -56,9 +60,21 @@ function changeColor(color,delay){
 }
 
 async function demo(){
+    try{
  await changeColor("red",1000);
  await changeColor("orange",1000);
  await changeColor("blue",1000);
  await changeColor("pink",1000);
-changeColor("purple",1000);
+ await changeColor("purple",1000);
+    }
+    catch(err){
+        console.log("error caught");
+        console.log(err);
+    }
 }
+
+// how we handle the rejections with await suing try and catch
+
+let a = 5;
+console.log("now after await new work");
+console.log("fdsg");
