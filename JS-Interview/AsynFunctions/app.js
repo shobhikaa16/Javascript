@@ -40,3 +40,25 @@ async function demo(){
     await getNum();
     getNum(); //we have use wait so they will come one by one after each second
 }
+
+
+// async function for the chnge color
+
+let h3 = document.querySelector("h3");
+function changeColor(color,delay){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            h3.style.color=color;
+            console.log("color chnges");
+            resolve("color changed!");
+        },delay);
+});
+}
+
+async function demo(){
+ await changeColor("red",1000);
+ await changeColor("orange",1000);
+ await changeColor("blue",1000);
+ await changeColor("pink",1000);
+changeColor("purple",1000);
+}
