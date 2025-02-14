@@ -37,5 +37,10 @@ JSON.stringify(student);
 //1.Hppscoth
 //2.Postman
 
+//AJAX - Asynchrpnous javvascript and XML , req and response process is asynchronous these req and response are called ajax
+// Http Verbs  - Get , POst , Put , Delete
+//Status code - 404 page not found, 200 -ok, 400-bad req, 500 - internal server error and many more
+// Additional information in our url - query String in the url where we can add our query in hte form of key value pair eg. harry+potter
+
 
 
